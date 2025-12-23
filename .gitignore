@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 backend/venv/
 backend/.env
-backend/DataSets/*
-!backend/DataSets/.gitkeep
-
 # Node
 frontend/node_modules/
 frontend/dist/

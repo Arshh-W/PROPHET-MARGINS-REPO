@@ -1,0 +1,58 @@
+.footer {
+  background-color: #f4ebd5;
+  padding: 64px 80px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Brand Section */
+.brand {
+  max-width: 320px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Links Section */
+.linksWrapper {
+  display: flex;
+  gap: 80px;
+}
+
+.column h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.column a {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.column a:hover {
+  color: #000;
+}

@@ -1,0 +1,171 @@
+/* global CSS - usually in index.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Overall layout */
+.landing-wrapper {
+  background-color: #f4ebd5;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 0 4rem; 
+  width: 100%;
+}
+
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  font-size: 25px; 
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 25px
+}
+
+.logo img {
+  height: 32px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-actions a {
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.logo-nav {
+  size: 3rem;
+}
+
+/* BUTTON */
+.primary-btn {
+  background-color: #4b5563;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.primary-btn:hover {
+  background-color: #374151;
+}
+
+/* HERO SECTION */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 10rem;
+
+
+}
+
+
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  margin-left: 3rem;
+  color: #0f172a;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  margin-left: 3rem;
+}
+.two {
+ margin-left: 3rem
+}
+.hero-image img {
+  width: 100%;
+  max-width: 480px;
+}
+
+
+
+/* Reset defaults */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ===================== */
+/* Responsive Breakpoints */
+/* ===================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .landing-wrapper {
+    padding: 0 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* Navbar stacks vertically */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  /* Hero stacks image below text */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Text sizes smaller */
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  /* Reduce overall padding */
+  .landing-wrapper {
+    padding: 0 1rem;
+  }
+}
+
+

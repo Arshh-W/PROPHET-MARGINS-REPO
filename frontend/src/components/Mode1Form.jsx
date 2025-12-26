@@ -31,6 +31,7 @@ const Mode1Form = () => {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
     setError(null);
     setResults(null);
@@ -41,6 +42,7 @@ const Mode1Form = () => {
       formData.append('option', '1');
       formData.append('demandColumn', fieldMatcher.demandColumn);
       formData.append('categoryColumn', fieldMatcher.categoryColumn);
+      formData.append('dateColumn', fieldMatcher.dateColumn);
       formData.append('categoryName', categoryName);
       formData.append('dateRange', dateRange);
 

@@ -1,4 +1,4 @@
-// ...existing code...
+// Simple test component to verify chart works
 import ChartPlaceholder from './ChartPlaceholder';
 
 const ChartTest = () => {
@@ -30,5 +30,4 @@ const ChartTest = () => {
 };
 
 export default ChartTest;
-
 

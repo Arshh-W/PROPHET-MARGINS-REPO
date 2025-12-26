@@ -37,19 +37,30 @@ const Mode1Form = () => {
     setResults(null);
 
     try {
+      // Validate required fields
+      if (!file) {
+        throw new Error('Please select a file to upload');
+      }
+      if (!fieldMatcher.dateColumn?.trim() || !fieldMatcher.demandColumn?.trim() || !fieldMatcher.categoryColumn?.trim()) {
+        throw new Error('Please fill in all column names');
+      }
+      if (!categoryName?.trim()) {
+        throw new Error('Please enter a category name');
+      }
+
       const formData = new FormData();
       formData.append('file', file);
       formData.append('option', '1');
-      formData.append('demandColumn', fieldMatcher.demandColumn);
-      formData.append('categoryColumn', fieldMatcher.categoryColumn);
-      formData.append('dateColumn', fieldMatcher.dateColumn);
-      formData.append('categoryName', categoryName);
+      formData.append('dateColumn', fieldMatcher.dateColumn.trim());
+      formData.append('demandColumn', fieldMatcher.demandColumn.trim());
+      formData.append('categoryColumn', fieldMatcher.categoryColumn.trim());
+      formData.append('categoryName', categoryName.trim());
       formData.append('dateRange', dateRange);
 
       const data = await predictByCategory(formData);
       setResults(data);
     } catch (err) {
-      setError(err.message);
+      setError(err.message || 'An error occurred while processing your request');
     } finally {
       setLoading(false);
     }

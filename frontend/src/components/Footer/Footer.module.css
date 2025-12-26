@@ -70,7 +70,6 @@
   box-shadow: 0 4px 8px rgba(61, 47, 40, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .footer {
     padding: 3rem 2rem 1.5rem;

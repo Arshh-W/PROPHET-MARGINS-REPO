@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './FileUpload.css';
 
-const FileUpload = ({ onFileSelect, accept = '.csv', disabled = false }) => {
+const FileUpload = ({ onFileSelect, accept = '.csv,.pkl', disabled = false }) => {
   const [fileName, setFileName] = useState('');
   const [isDragging, setIsDragging] = useState(false);
 
@@ -30,9 +30,13 @@ const FileUpload = ({ onFileSelect, accept = '.csv', disabled = false }) => {
     e.preventDefault();
     setIsDragging(false);
     const file = e.dataTransfer.files[0];
-    if (file && file.name.endsWith('.csv')) {
-      setFileName(file.name);
-      onFileSelect(file);
+    if (file) {
+      const fileName = file.name.toLowerCase();
+      const isValidFileType = fileName.endsWith('.csv') || fileName.endsWith('.pkl');
+      if (isValidFileType) {
+        setFileName(file.name);
+        onFileSelect(file);
+      }
     }
   };
 

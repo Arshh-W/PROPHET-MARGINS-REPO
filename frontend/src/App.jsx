@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Landing from './pages/Landing'
 import DemandPrediction from './pages/DemandPrediction'
-import './App.css'
+
 
 function App() {
   return (
@@ -15,5 +15,6 @@ function App() {
 }
 
 export default App
+
 
 

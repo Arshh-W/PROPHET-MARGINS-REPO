@@ -18,7 +18,6 @@
 
 .file-upload-area.dragging {
   border-color: #3D2F28;
-  background: rgba(61, 47, 40, 0.05);
   transform: scale(1.02);
 }
 
@@ -93,4 +92,5 @@
     transform: translateX(0);
   }
 }
+
 

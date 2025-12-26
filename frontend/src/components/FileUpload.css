@@ -1,0 +1,96 @@
+.file-upload-area {
+  position: relative;
+  border: 2px dashed rgba(61, 47, 40, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: rgba(245, 241, 230, 0.3);
+  cursor: pointer;
+}
+
+.file-upload-area:hover {
+  border-color: rgba(61, 47, 40, 0.5);
+  background: rgba(245, 241, 230, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(61, 47, 40, 0.1);
+}
+
+.file-upload-area.dragging {
+  border-color: #3D2F28;
+  transform: scale(1.02);
+}
+
+.file-upload-area.has-file {
+  border-color: #3D2F28;
+  background: rgba(61, 47, 40, 0.05);
+}
+
+.file-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.file-icon {
+  color: #3D2F28;
+  transition: transform 0.3s ease;
+}
+
+.file-upload-area:hover .file-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.file-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.file-text-main {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3D2F28;
+}
+
+.file-text-sub {
+  font-size: 0.85rem;
+  color: #6B5D4F;
+}
+
+.file-success {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3D2F28;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+

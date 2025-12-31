@@ -30,7 +30,7 @@ genai.configure(api_key=api_key)
 gemini_model = genai.GenerativeModel('gemini-2.5-flash')
 
 def get_business_inference(prediction_data, category):
-    try:
+    try:#handles Gemini API calling
         if isinstance(prediction_data, str):
             return "Prophet could not analyze data due to an error."
             
@@ -49,10 +49,10 @@ def get_business_inference(prediction_data, category):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('frontend\index.html')
 
 @app.route('/predict', methods=['POST'])
-def predict():
+def predict():#handles requests and sends response
     try:
         #handles all file related issues first
         if 'file' in request.files:
@@ -96,7 +96,7 @@ def predict():
         option = content.get('option')
         user_data = content.get('data', {})
         col_map = content.get('col_map', None)
-        if option == 1:
+        if option == 1:#option 1
             raw_filename = user_data.get('dataset', 'ds1.pkl')
             filename = os.path.basename(raw_filename)
             dataset_path = os.path.join(BASE_DIR, 'DataSets', filename)
@@ -119,7 +119,7 @@ def predict():
                 "results": results, 
                 "inference": inference
             })
-        elif option == 2:
+        elif option == 2: #option 2
             start_date = user_data.get('start_date')
             sales_data = user_data.get('sales_data')
             raw_results = predict_manual_week(start_date, sales_data)
@@ -140,7 +140,7 @@ def predict():
                 "results": formatted_results,
                 "inference": inference 
             })
-        elif option == 3:
+        elif option == 3:#option 3
             raw_filename = user_data.get('dataset', 'ds1.pkl')
             filename = os.path.basename(raw_filename)
             dataset_path = os.path.join(BASE_DIR, 'DataSets', filename)
